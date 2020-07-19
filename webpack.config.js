@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
-        library: 'FUI',
+        library: 'sunny-react-ui',
         libraryTarget: 'umd',
     },
     module: {
@@ -21,6 +21,10 @@ module.exports = {
             {
                 test:/\.svg$/,
                 loader: 'svg-sprite-loader'
+            },
+            {
+                test:/\.s([ac])ss$/,
+                use:['style-loader','css-loader','sass-loader']
             }
         ]
     },
