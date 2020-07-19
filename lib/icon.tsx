@@ -1,12 +1,13 @@
 import * as React from "react";
+import wechat from './icons/wechat';
 
 interface IconProps{
     name:String
 }
 
-const Icon:React.FunctionComponent<IconProps>=(IconProps)=>{
+const Icon:React.FunctionComponent<IconProps>=(props)=>{
     return(
-        <div>icon</div>
+        <div>icon{props.children}</div>
     )
 }
 
