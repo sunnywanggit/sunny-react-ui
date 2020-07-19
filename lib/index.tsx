@@ -1,6 +1,9 @@
-import Button from './button';
+import * as React from "react";
+import Icon from './icon';
+import ReactDOM from "react-dom";
 
-const a = 1
-console.log('hi')
-
-export {Button, a};
+ReactDOM.render(
+    <div>
+        <Icon name="alipay"/>
+    </div>
+    ,document.body)
