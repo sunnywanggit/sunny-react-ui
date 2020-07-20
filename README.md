@@ -4,6 +4,12 @@
 1. yarn install
 2. yarn start
 
+## 单元测试
+
+该项目使用DDD（基于行为的测试）进行测试。
+
+
+
 ## icon 组件
 
 支持所有事件绑定
