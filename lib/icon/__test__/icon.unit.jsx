@@ -3,8 +3,17 @@ import React from 'react';
 import Icon from '../icon';
 
 describe('icon', () => {
-    it('测试 icon', () => {
-        const json = renderer.create(<Icon/>).toJSON();
+    it('icon是svg', () => {
+        const json = renderer.create(<Icon name="alipay"/>).toJSON();
+        //期待json是符合快照的
+        expect(json).toMatchSnapshot();
+    });
+});
+
+describe('onClick', () => {
+    it('icon是svg', () => {
+        const json = renderer.create(<Icon name="alipay"/>).toJSON();
+        //期待json是符合快照的
         expect(json).toMatchSnapshot();
     });
 });
