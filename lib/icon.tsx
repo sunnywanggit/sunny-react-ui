@@ -7,14 +7,13 @@ interface IconProps extends React.SVGAttributes<SVGElement>{
     name:string
 }
 
-const Icon:React.FunctionComponent<IconProps>=(props)=>{
-    //为了避免使用者传入的 className 覆盖组件本身的 className
-    //我们先把 className 单独拎出来，然后再和原有的 className 合并
-    const {className,...restProps} = props;
+//为了避免使用者传入的 className 覆盖组件本身的 className
+//我们先把 className 单独拎出来，然后再和原有的 className 合并
+const Icon:React.FunctionComponent<IconProps>=({className,name,...restProps})=>{
     return(
         <svg className={mergeClassNames('sui-icon',className)}
              {...restProps} >
-            <use xlinkHref={`#${props.name}`}></use>
+            <use xlinkHref={`#${name}`}></use>
         </svg>
     )
 };
