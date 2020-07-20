@@ -1,6 +1,7 @@
 import * as React from "react";
 import './icon.scss'
 import './importAllIcons'
+import mergeClassNames from './helpers/mergeClassNames';
 
 interface IconProps extends React.SVGAttributes<SVGElement>{
     name:string
@@ -11,7 +12,7 @@ const Icon:React.FunctionComponent<IconProps>=(props)=>{
     //我们先把 className 单独拎出来，然后再和原有的 className 合并
     const {className,...restProps} = props;
     return(
-        <svg className={`sui-icon ${className ? className : ''}`}
+        <svg className={mergeClassNames('sui-icon',className)}
              {...restProps} >
             <use xlinkHref={`#${props.name}`}></use>
         </svg>
