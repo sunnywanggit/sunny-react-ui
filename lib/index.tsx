@@ -1,5 +1,5 @@
 import * as React from "react";
-import Icon from './icon';
+import Icon from './icon/icon';
 // @ts-ignore
 import ReactDOM from "react-dom";
 
