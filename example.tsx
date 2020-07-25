@@ -1,5 +1,30 @@
-import Icon from "./lib/icon/icon";
 import ReactDom from 'react-dom'
 import React from "react";
+import { BrowserRouter as Router,  Route, Link } from "react-router-dom";
+import IconExample from "./lib/icon/icon.example";
+import ButtonExample from "./lib/button.example";
 
-ReactDom.render((<div><Icon name="wechat"/></div>),document.querySelector('#root'))
+ReactDom.render((
+    <Router>
+        <div>
+            <header>
+                <div className="logo">
+                    Sunny React UI
+                </div>
+            </header>
+            <div>
+                <aside>
+                    <h2>组件</h2>
+                    <ul>
+                        <li><Link to="/icon">Icon</Link></li>
+                        <li><Link to="/button">Button</Link></li>
+                    </ul>
+                </aside>
+                <main>
+                    <Route path="/icon" component={IconExample}></Route>
+                    <Route path="/button" component={ButtonExample}></Route>
+                </main>
+            </div>
+        </div>
+    </Router>
+),document.querySelector('#root'))
