@@ -1,0 +1,11 @@
+.example-wrapper{
+  &-body{
+    display: flex;
+
+    &-main{
+      margin-left: 100px;
+      border: 1px solid red;
+    }
+  }
+
+}

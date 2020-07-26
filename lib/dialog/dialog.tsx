@@ -1,11 +1,11 @@
 import React, {Fragment, ReactElement, ReactNode} from "react";
 import Icon from "../icon/icon";
-import scopeCalssMaker from "../classes";
+import scopeClassMaker from "../helpers/classes";
 import '../index.scss'
 import './dialog.scss'
 import ReactDOM from 'react-dom';
 
-const scopedClass = scopeCalssMaker('sui-dialog')
+const scopedClass = scopeClassMaker('sui-dialog')
 const sc = scopedClass;
 
 interface Props {
