@@ -1,15 +1,19 @@
 @import "../_helper.scss";
 
-.sui-layout{
-  border: 1px solid red;
+.sui-layout {
   display: flex;
   flex-direction: column;
-  & &{
-    display: flex;
-    flex-direction: row;
+  &-content {
     flex-grow: 1;
   }
-  &-content{
+  & & {
     flex-grow: 1;
+    flex-direction: row;
+  }
+  &-hasAside {
+    flex-direction: row;
+    .sui-layout {
+      flex-direction: column;
+    }
   }
 }
