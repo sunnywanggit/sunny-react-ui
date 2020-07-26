@@ -5,17 +5,15 @@ import '../index.scss'
 import './dialog.scss'
 import ReactDOM from 'react-dom';
 
+const scopedClass = scopeCalssMaker('sui-dialog')
+const sc = scopedClass;
+
 interface Props {
     visible:Boolean,
     buttons?:Array<ReactElement>,
     onClose:React.MouseEventHandler,
     closeOnCloseMask?:Boolean
 }
-
-
-const scopedClass = scopeCalssMaker('sui-dialog')
-const sc = scopedClass;
-
 
 const Dialog:React.FunctionComponent<Props>=(props)=>{
     const onClickClose:React.MouseEventHandler=(e)=>{
@@ -26,7 +24,9 @@ const Dialog:React.FunctionComponent<Props>=(props)=>{
             props.onClose(e)
         }
     }
-    const x =props.visible ?
+    //如果组件是在某种条件下才进行渲染的，你可以使用问号冒号表达式，或者你不想使用问号冒号表示式，可以使用 &&
+    const result =props.visible ?
+        // Fragment当做一个包裹层进行使用
         <Fragment>
             <div className={sc('mask')} onClick={onClickMask}>
             </div>
@@ -55,7 +55,8 @@ const Dialog:React.FunctionComponent<Props>=(props)=>{
         : null
     return(
         //使用react传送门，避免用户在使用dialog的时候，dialog的父元素设置z-inde，导致mask不起作用
-        ReactDOM.createPortal(x,document.body)
+        //直接使用传送门将我们的节点传送到另外一个地方
+        ReactDOM.createPortal(result,document.body)
     )
 }
 
@@ -71,6 +72,9 @@ const modal=(content:ReactNode,buttons?:Array<ReactElement>,afterClose?:()=>void
         ReactDOM.unmountComponentAtNode(div);
         div.remove()
     }
+    // 这里展示了如何动态渲染一个组件：
+    // 1.先声明一个组件，然后放到div中
+    // 2.把div放到页面中
     const component = <Dialog
         onClose={()=>{close();afterClose && afterClose()}}
         visible={true} buttons={buttons}>
@@ -83,6 +87,7 @@ const modal=(content:ReactNode,buttons?:Array<ReactElement>,afterClose?:()=>void
 }
 
 const alert=(content:string)=>{
+    //使用闭包传API
     const button = <button onClick={()=>{close()}}>OK</button>
     const close = modal(content,[button])
 }
