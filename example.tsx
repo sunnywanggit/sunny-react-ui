@@ -7,22 +7,21 @@ import DialogExample from "./lib/dialog/dialog.example";
 import LayoutExample from "./lib/layout/Layout.example";
 import './example.scss'
 import scopeClassMaker from "./lib/helpers/classes";
+import {Layout,Header,Aside,Content,Footer} from "./lib/layout/layout";
 
-const scopedClass = scopeClassMaker('example-wrapper')
+const scopedClass = scopeClassMaker('example')
 const sc = scopedClass;
-
-
 
 ReactDom.render((
     <Router>
-        <div className={sc()}>
-            <header>
+        <Layout className={sc()}>
+            <Header className={sc('header')}>
                 <div className="logo">
                     Sunny React UI
                 </div>
-            </header>
-            <div className={sc('body')}>
-                <aside className={sc('body-aside')}>
+            </Header>
+            <Layout className={sc('body')} >
+                <Aside className={sc('body-aside')}>
                     <h2>组件</h2>
                     <ul>
                         <li><Link to="/icon">Icon</Link></li>
@@ -30,14 +29,17 @@ ReactDom.render((
                         <li><Link to="/dialog">Dialog</Link></li>
                         <li><Link to="/layout">Layout</Link></li>
                     </ul>
-                </aside>
-                <main className={sc('body-main')}>
+                </Aside>
+                <Content className={sc('body-main')}>
                     <Route path="/icon" component={IconExample}></Route>
                     <Route path="/button" component={ButtonExample}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/layout" component={LayoutExample}></Route>
-                </main>
-            </div>
-        </div>
+                </Content>
+            </Layout>
+            <Footer className={sc('footer')}>
+                <p>this is footer</p>
+            </Footer>
+        </Layout>
     </Router>
 ),document.querySelector('#root'))
