@@ -10,57 +10,68 @@ $color-back:#ebebeb;
 $color-main:#f8505f;
 $color-white:#fff;
 
-.example{
-  display: flex;
-  flex-direction: column;
-}
+.example{ position: relative; }
 
 .example-header{
-  border: 1px solid red;
-  min-height: 18%;
+  position: fixed;
+  width: 100%;
+  min-height: 50px;
   font-weight: 500;
   display: flex;
+  background-color: #fff;
   justify-content:flex-start;
   padding: 0 20px;
   align-items: center;
   color: $color-main;
+  box-shadow: 0 0 3px #888;
 }
 
 .example-body{
+  position: relative;
+  margin-top: 50px;
   flex-grow: 1;
   display: flex;
   flex-direction: row;
   min-height: 82%;
-  &-aside{
-    border: 1px solid blue;
-    padding: 20px 0 20px 20px;
-    width: 14em;
-    min-height: 50em;
-    h2{
-      font-size: 16px;
-    }
-    ul>li{
-      margin: 4px 0;
-      padding: 0 0 0 8px;
-      a{
-        display: inline-block;
-        padding: 2px 0;
-        width: 100%;
-        height: 100%;
-        &:hover{
-          color: $color-main;
-          cursor: pointer;
-        }
-        &.active{
-          background-color: $color-main;
-          color: $color-white;
-        }
+}
+
+.example-body-aside{
+  position: fixed;
+  left: 0;
+  padding: 20px 0 20px 20px;
+  width: 14em;
+  min-height: 50em;
+  background-color: $color-back;
+  h2{
+    font-size: 16px;
+  }
+  ul>li{
+    margin: 4px 0;
+    padding: 0 0 0 8px;
+    a{
+      display: inline-block;
+      padding: 2px 0 2px 6px;
+      width: 100%;
+      height: 100%;
+      &:hover{
+        color: $color-main;
+        cursor: pointer;
+      }
+      &.active{
+        background-color: $color-main;
+        color: $color-white;
       }
     }
   }
-  border: 1px solid green;
 }
 
+.example-body-main{
+  z-index:-1;
+  position: relative;
+  margin-left: 14em;
+  min-height: 50em;
+  padding: 20px 20px 20px 20px ;
+}
 .example-footer{
   min-height: 10%;
 }
