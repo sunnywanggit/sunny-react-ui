@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
@@ -19,12 +19,12 @@ module.exports = {
                 loader: 'awesome-typescript-loader'
             },
             {
-                test:/\.svg$/,
+                test: /\.svg$/,
                 loader: 'svg-sprite-loader'
             },
             {
-                test:/\.s([ac])ss$/,
-                use:['style-loader','css-loader','sass-loader']
+                test: /\.s([ac])ss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/i,
@@ -36,4 +36,4 @@ module.exports = {
             },
         ]
     },
-}
+};
