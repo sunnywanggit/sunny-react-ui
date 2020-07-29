@@ -26,7 +26,7 @@ ReactDom.render((
             </Header>
             <Layout className={sc('body')}>
                 <Aside className={sc('body-aside')}>
-                    <h2>INTRODUCTION</h2>
+                    <span>INTRODUCTION</span>
                     <ul>
                         <li><NavLink to="/icon">Icon</NavLink></li>
                         <li><NavLink to="/button">Button</NavLink></li>

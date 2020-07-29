@@ -1,5 +1,5 @@
 *{ padding: 0; margin: 0; box-sizing: border-box; }
-h1,h2,h3,h4,h5{font-weight: normal}
+//h1,h2,h3,h4,h5{font-weight: normal}
 ul,li,ol{list-style: none}
 a{
   text-decoration:none;
@@ -10,19 +10,21 @@ $color-back:#ebebeb;
 $color-main:#f8505f;
 $color-white:#fff;
 
+$color-line:#fc929b;
+
 .example{ position: relative; }
 
 .example-header{
   position: fixed;
   width: 100%;
   min-height: 50px;
-  font-weight: 500;
+  font-weight: bolder;
   display: flex;
   background-color: #fff;
   justify-content:flex-start;
   padding: 0 20px;
   align-items: center;
-  color: $color-main;
+  color: #222;
   box-shadow: 0 0 3px #888;
 }
 
@@ -70,8 +72,52 @@ $color-white:#fff;
   position: relative;
   margin-left: 14em;
   min-height: 50em;
-  padding: 20px 20px 20px 20px ;
+  padding: 20px 30px 20px 30px ;
 }
 .example-footer{
   min-height: 10%;
 }
+
+//每个页面的单独样式
+h2{
+  //padding-bottom: 2px;
+  border-bottom: 3px solid $color-line;
+  margin-bottom: 20px;
+}
+
+h3{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+h3::before{
+  content: "";
+  position:absolute;
+  margin-left: -7px;
+  margin-top: 3px;
+  width: 3px;
+  height: 1em;
+  background-color:$color-line;
+}
+
+p{
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+
+//背相关颜色
+$color-back:#ebebeb;
+//字体相关颜色
+$color-main:#f8505f;
+$color-white:#fff;
+
+$color-line:#fc929b;
+
+$color-hover:#f6f6f6;
+
+.icon-wrapper{
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  .item{
+    cursor: pointer;
+    flex-grow: 1;
+    height: 4em;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    .sui-icon{
+      width: 1.4em;
+      height: 1.4em;
+    }
+  }
+}

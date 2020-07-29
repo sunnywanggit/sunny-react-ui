@@ -13,7 +13,7 @@ const Icon:React.FunctionComponent<IconProps>=({className,name,...restProps})=>{
     return(
         <svg className={mergeClassNames('sui-icon',className)}
              {...restProps} >
-            <use xlinkHref={`#${name}`}></use>
+            <use xlinkHref={`#${name}`}/>
         </svg>
     )
 };
