@@ -1,15 +1,19 @@
-import ReactDom from 'react-dom'
-import React from "react";
-import { HashRouter as Router,  Route, Link } from "react-router-dom";
-import IconExample from "./lib/icon/icon.example";
-import ButtonExample from "./lib/button.example";
-import DialogExample from "./lib/dialog/dialog.example";
-import LayoutExample from "./lib/layout/Layout.example";
-import './example.scss'
-import scopeClassMaker from "./lib/helpers/classes";
-import {Layout,Header,Aside,Content,Footer} from "./lib/layout/layout";
+import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
+import IconExample from './lib/icon/icon.example';
+import ButtonExample from './lib/button.example';
+import DialogExample from './lib/dialog/dialog.example';
+import LayoutExample from './lib/layout/Layout.example';
+import './example.scss';
+import scopeClassMaker from './lib/helpers/classes';
+import Layout from './lib/layout/layout';
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
+import Content from './lib/layout/Content';
+import Header from './lib/layout/header';
+import Aside from './lib/layout/aside';
+import Footer from './lib/layout/footer';
 
-const scopedClass = scopeClassMaker('example')
+const scopedClass = scopeClassMaker('example');
 const sc = scopedClass;
 
 ReactDom.render((
@@ -20,14 +24,14 @@ ReactDom.render((
                     Sunny React UI
                 </div>
             </Header>
-            <Layout className={sc('body')} >
+            <Layout className={sc('body')}>
                 <Aside className={sc('body-aside')}>
-                    <h2>组件</h2>
+                    <h2>INTRODUCTION</h2>
                     <ul>
-                        <li><Link to="/icon">Icon</Link></li>
-                        <li><Link to="/button">Button</Link></li>
-                        <li><Link to="/dialog">Dialog</Link></li>
-                        <li><Link to="/layout">Layout</Link></li>
+                        <li><NavLink to="/icon">Icon</NavLink></li>
+                        <li><NavLink to="/button">Button</NavLink></li>
+                        <li><NavLink to="/dialog">Dialog</NavLink></li>
+                        <li><NavLink to="/layout">Layout</NavLink></li>
                     </ul>
                 </Aside>
                 <Content className={sc('body-main')}>
@@ -38,8 +42,8 @@ ReactDom.render((
                 </Content>
             </Layout>
             <Footer className={sc('footer')}>
-                <p>this is footer</p>
+                &copy; 王震
             </Footer>
         </Layout>
     </Router>
-),document.querySelector('#root'))
+), document.querySelector('#root'));

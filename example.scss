@@ -1,13 +1,66 @@
 *{ padding: 0; margin: 0; box-sizing: border-box; }
 h1,h2,h3,h4,h5{font-weight: normal}
+ul,li,ol{list-style: none}
+a{
+  text-decoration:none;
+}
+//背相关颜色
+$color-back:#ebebeb;
+//字体相关颜色
+$color-main:#f8505f;
+$color-white:#fff;
+
 .example{
-  &-header{
-    border: 1px solid red;
-  }
-  &-body{
-    border: 1px solid green;
-  }
-  &-footer{
+  display: flex;
+  flex-direction: column;
+}
+
+.example-header{
+  border: 1px solid red;
+  min-height: 18%;
+  font-weight: 500;
+  display: flex;
+  justify-content:flex-start;
+  padding: 0 20px;
+  align-items: center;
+  color: $color-main;
+}
+
+.example-body{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  min-height: 82%;
+  &-aside{
     border: 1px solid blue;
+    padding: 20px 0 20px 20px;
+    width: 14em;
+    min-height: 50em;
+    h2{
+      font-size: 16px;
+    }
+    ul>li{
+      margin: 4px 0;
+      padding: 0 0 0 8px;
+      a{
+        display: inline-block;
+        padding: 2px 0;
+        width: 100%;
+        height: 100%;
+        &:hover{
+          color: $color-main;
+          cursor: pointer;
+        }
+        &.active{
+          background-color: $color-main;
+          color: $color-white;
+        }
+      }
+    }
   }
+  border: 1px solid green;
+}
+
+.example-footer{
+  min-height: 10%;
 }
