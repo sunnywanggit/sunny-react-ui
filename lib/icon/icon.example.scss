@@ -12,17 +12,19 @@ $color-hover:#f6f6f6;
 .icon-wrapper{
   margin: 10px 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   .item{
     cursor: pointer;
-    flex-grow: 1;
-    height: 4em;
+    //flex-grow: 1;
+    width: 16.6%;
+    height: 5em;
     display: inline-block;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    font-size: 13px;
     .sui-icon{
       width: 1.4em;
       height: 1.4em;

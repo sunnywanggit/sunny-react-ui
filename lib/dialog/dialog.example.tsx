@@ -3,7 +3,9 @@ import Dialog from "./dialog";
 import {alert,confirm,modal} from './dialog'
 
 const DialogExample:React.FunctionComponent=()=>{
+
     const [display,setDisplay] = useState(false);
+
     return(
         <div>
             <div>
@@ -16,6 +18,7 @@ const DialogExample:React.FunctionComponent=()=>{
                 } onClose={()=>{setDisplay(false)}}>
                     <div>hi dialog</div>
                 </Dialog>
+
             </div>
             <div>
                 <button onClick={()=>{alert('999999')}}>alert</button>

@@ -1,6 +1,6 @@
 import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
 import IconExample from './lib/icon/icon.example';
-import ButtonExample from './lib/button.example';
+import ButtonExample from './lib/button/button.example';
 import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/Layout.example';
 import './example.scss';
@@ -26,12 +26,18 @@ ReactDom.render((
             </Header>
             <Layout className={sc('body')}>
                 <Aside className={sc('body-aside')}>
-                    <span>INTRODUCTION</span>
+                    <span className="aside-title">通用</span>
                     <ul>
-                        <li><NavLink to="/icon">Icon</NavLink></li>
                         <li><NavLink to="/button">Button</NavLink></li>
-                        <li><NavLink to="/dialog">Dialog</NavLink></li>
+                        <li><NavLink to="/icon">Icon</NavLink></li>
+                    </ul>
+                    <span className="aside-title">布局</span>
+                    <ul>
                         <li><NavLink to="/layout">Layout</NavLink></li>
+                    </ul>
+                    <span className="aside-title">反馈</span>
+                    <ul>
+                        <li><NavLink to="/dialog">Dialog</NavLink></li>
                     </ul>
                 </Aside>
                 <Content className={sc('body-main')}>
