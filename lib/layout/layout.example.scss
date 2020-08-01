@@ -1,0 +1,26 @@
+$color-header:#AAE2F4;
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.header,.footer{
+  background-color: $color-header;
+  height: 50px;
+  @include flex-center;
+}
+
+.content{
+  background-color: darken($color-header,30%);
+  @include flex-center;
+}
+
+.aside{
+
+  background-color: darken($color-header,20%);
+  @include flex-center;
+}
+
