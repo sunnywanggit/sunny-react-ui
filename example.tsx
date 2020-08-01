@@ -12,6 +12,7 @@ import Content from './lib/layout/Content';
 import Header from './lib/layout/header';
 import Aside from './lib/layout/aside';
 import Footer from './lib/layout/footer';
+import DividerExample from "./lib/divider/divider.example";
 
 const scopedClass = scopeClassMaker('example');
 const sc = scopedClass;
@@ -34,6 +35,7 @@ ReactDom.render((
                     <span className="aside-title">布局</span>
                     <ul>
                         <li><NavLink to="/layout">Layout</NavLink></li>
+                        <li><NavLink to="/divider">Divider</NavLink></li>
                     </ul>
                     <span className="aside-title">反馈</span>
                     <ul>
@@ -45,6 +47,7 @@ ReactDom.render((
                     <Route path="/button" component={ButtonExample}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/layout" component={LayoutExample}></Route>
+                    <Route path="/divider" component={DividerExample}></Route>
                 </Content>
             </Layout>
             <Footer className={sc('footer')}>

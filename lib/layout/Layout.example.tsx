@@ -6,7 +6,7 @@ import Footer from "./footer";
 import Aside from "./aside";
 import './layout.example.scss'
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {github} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atelierPlateauLight} from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 const LayoutExample:React.FunctionComponent = () => {
     return(
@@ -57,7 +57,7 @@ const LayoutExample:React.FunctionComponent = () => {
 
 
             <h4>代码展示</h4>
-            <SyntaxHighlighter language="javascript" style={github}>
+            <SyntaxHighlighter language="javascript" style={atelierPlateauLight}>
 
                 {`
             import {Layout,Header,Aside,Content,Footer } from 'sunny-react-ui';

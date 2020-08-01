@@ -2,13 +2,13 @@ import React from 'react';
 import Icon from './icon';
 import './icon.example.scss'
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {github} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {androidstudio,} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 const IconExample: React.FunctionComponent = () => {
     return (
         <div>
             <h2>Icon 图标</h2>
             <p>语义化的矢量图形。使用图标组件，你需要安装 <code>@sunny-react-ui/icons</code> 图标组件包，具体使用方法如下：</p>
-            <SyntaxHighlighter language="javascript" style={github}>
+            <SyntaxHighlighter language="javascript" style={androidstudio}>
                 {`
             yarn add @sunny-react-ui/icons
                 `}
@@ -173,7 +173,7 @@ const IconExample: React.FunctionComponent = () => {
             <h3>代码演示</h3>
             <h4>基本用法</h4>
             <p>通过 @raect-sunny-ui/icons 引用 Icon 组件，不同主题的 Icon 组件名为图标名。</p>
-            <SyntaxHighlighter language="javascript" style={github}>
+            <SyntaxHighlighter language="javascript" style={androidstudio}>
 
                 {`
             import Icon from 'sunny-react-ui';
