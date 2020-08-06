@@ -13,6 +13,7 @@ import Header from './lib/layout/header';
 import Aside from './lib/layout/aside';
 import Footer from './lib/layout/footer';
 import DividerExample from "./lib/divider/divider.example";
+import RateExample from './lib/rate/rate.example';
 
 const scopedClass = scopeClassMaker('example');
 const sc = scopedClass;
@@ -41,6 +42,10 @@ ReactDom.render((
                     <ul>
                         <li><NavLink to="/dialog">Dialog</NavLink></li>
                     </ul>
+                    <span className="aside-title">表单</span>
+                    <ul>
+                        <li><NavLink to="/rate">Rate</NavLink></li>
+                    </ul>
                 </Aside>
                 <Content className={sc('body-main')}>
                     <Route path="/icon" component={IconExample}></Route>
@@ -48,6 +53,7 @@ ReactDom.render((
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/layout" component={LayoutExample}></Route>
                     <Route path="/divider" component={DividerExample}></Route>
+                    <Route path="/rate" component={RateExample}></Route>
                 </Content>
             </Layout>
             <Footer className={sc('footer')}>
