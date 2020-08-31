@@ -1,6 +1,5 @@
-import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
+import {HashRouter as Router, Route, NavLink, Redirect} from 'react-router-dom';
 import IconExample from './lib/icon/icon.example';
-import ButtonExample from './lib/button/button.example';
 import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/Layout.example';
 import './example.scss';
@@ -13,6 +12,7 @@ import Header from './lib/layout/header';
 import Aside from './lib/layout/aside';
 import Footer from './lib/layout/footer';
 import DividerExample from "./lib/divider/divider.example";
+import InfoExample from "./lib/InfoExample";
 
 const scopedClass = scopeClassMaker('example');
 const sc = scopedClass;
@@ -27,9 +27,11 @@ ReactDom.render((
             </Header>
             <Layout className={sc('body')}>
                 <Aside className={sc('body-aside')}>
+                    <ul>
+                        <li><NavLink to="/info">介绍</NavLink></li>
+                    </ul>
                     <span className="aside-title">通用</span>
                     <ul>
-                        <li><NavLink to="/button">Button</NavLink></li>
                         <li><NavLink to="/icon">Icon</NavLink></li>
                     </ul>
                     <span className="aside-title">布局</span>
@@ -43,8 +45,9 @@ ReactDom.render((
                     </ul>
                 </Aside>
                 <Content className={sc('body-main')}>
+                    <Redirect exact from="/" to="/info"/>
+                    <Route path="/info" component={InfoExample}></Route>
                     <Route path="/icon" component={IconExample}></Route>
-                    <Route path="/button" component={ButtonExample}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/layout" component={LayoutExample}></Route>
                     <Route path="/divider" component={DividerExample}></Route>
