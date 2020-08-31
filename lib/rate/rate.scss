@@ -1,0 +1,24 @@
+.s-rate{
+  display: flex;
+  align-items: center;
+
+  &-above.sui-icon{
+    fill:#C6D1DE;
+  }
+  &-bottom.sui-icon{
+    fill:red;
+  }
+
+  &-icon{
+    position: relative;
+  }
+
+  &-icon-active{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    height: 20px;
+  }
+}
