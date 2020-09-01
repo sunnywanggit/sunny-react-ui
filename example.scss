@@ -23,15 +23,30 @@ section{
   position: fixed;
   width: 100%;
   min-height: 50px;
-  font-weight: bolder;
   display: flex;
   background-color: #fff;
-  justify-content:flex-start;
+  justify-content:space-between;
   padding: 0 20px;
   align-items: center;
   color: #222;
   box-shadow: 0 0 3px #888;
   z-index: 2;
+  > .logo{
+    > a{
+      color: $color-main;
+    }
+  }
+  > .nav-list ul{
+    display: flex;
+    flex-direction: row;
+    >li{
+      margin-right: 10px;
+      > a{
+        font-size: 13px;
+        color: #222;
+      }
+    }
+  }
 }
 
 .example-body{

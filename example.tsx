@@ -22,7 +22,13 @@ ReactDom.render((
         <Layout className={sc()}>
             <Header className={sc('header')}>
                 <div className="logo">
-                    Sunny React UI
+                    <a href="https://github.com/sunnywanggit/sunny-react-ui">Sunny React UI</a>
+                </div>
+                <div className="nav-list">
+                    <ul>
+                        <li><a href="#">SVUI组件库</a></li>
+                        <li><a href="#">SMUI组件库</a></li>
+                    </ul>
                 </div>
             </Header>
             <Layout className={sc('body')}>
